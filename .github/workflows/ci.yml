@@ -1,0 +1,17 @@
+name: CI Training       # שם ה-Workflow (מופיע בלשונית Actions)
+
+on:                     # מתי לרוץ?
+  push:
+    branches:
+      - master          # בכל דחיפה ל-master
+
+jobs:
+  build:                # שם ה-Job
+    runs-on: ubuntu-latest  # השרת שיריץ את העבודה
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4  # מוריד את הקוד מה-Repo לשרת
+
+    - name: Run my script
+      run: python main.py        # מריץ את הפקודה
