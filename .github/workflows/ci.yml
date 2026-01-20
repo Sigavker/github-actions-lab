@@ -18,3 +18,12 @@ jobs:
     
     - name: Run Tests
       run: echo "Running Tests..."
+
+    - name: Build something
+      run: echo "This is my app" > my-app.txt
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4  # הפעולה הרשמית להעלאה
+      with:
+        name: my-super-artifact         # השם שניתן לקופסה באחסון
+        path: my-app.txt                # הנתיב לקובץ שאנחנו רוצים לשמור
